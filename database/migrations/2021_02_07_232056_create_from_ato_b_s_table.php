@@ -16,7 +16,6 @@ class CreateFromAtoBSTable extends Migration
         Schema::create('from_ato_b_s', function (Blueprint $table) {
             $table->increments('id');
             $table->text('title');
-            $table->string('event_id');
             $table->time('timetable');
             $table->timestamps();
         });
