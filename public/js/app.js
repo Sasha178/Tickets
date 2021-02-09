@@ -49928,6 +49928,7 @@ function change(event) {
 
         if (directionA === 3) {
           var listRequest = JSON.parse(request.response);
+          console.log(listRequest);
 
           var _iterator = _createForOfIteratorHelper(listRequest),
               _step;
@@ -49935,21 +49936,7 @@ function change(event) {
           try {
             for (_iterator.s(); !(_step = _iterator.n()).done;) {
               var items = _step.value;
-
-              var _iterator2 = _createForOfIteratorHelper(items),
-                  _step2;
-
-              try {
-                for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-                  var item = _step2.value;
-                  stringList = stringList + "<option value=\"".concat(item, "\">").concat(item, "</option>");
-                  console.log(item);
-                }
-              } catch (err) {
-                _iterator2.e(err);
-              } finally {
-                _iterator2.f();
-              }
+              stringList = stringList + "<option value=\"".concat(items, "\">").concat(items, "</option>");
             }
           } catch (err) {
             _iterator.e(err);

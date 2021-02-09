@@ -25,12 +25,10 @@ function change(event) {
                 let stringList = '';
                 if (directionA === 3) {
                     let listRequest = JSON.parse(request.response);
+                    console.log(listRequest)
                     for (let items of listRequest){
-                        for (let item of items ){
-                            stringList = stringList + `<option value="${item}">${item}</option>`;
-                            console.log(item)
+                            stringList = stringList + `<option value="${items}">${items}</option>`;
                         }
-                    }
                 }
                 document.getElementById('time').insertAdjacentHTML('afterbegin', stringList);
 
