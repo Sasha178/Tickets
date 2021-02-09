@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 
 class BtoA extends Seeder
 {
@@ -14,37 +13,36 @@ class BtoA extends Seeder
     public function run()
     {
         DB::table('from_bto_a_s')->insert([
-            'title' => 'из B в A',
-            'event_id' => Str::random(3),
-            'timetable' =>  '18:00:00'
+            'title'     => 'из B в A',
+            'timetable' =>  '18:30:00'
 
         ]);
         DB::table('from_bto_a_s')->insert([
-            'title' => 'из B в A',
-            'event_id' => Str::random(3),
-            'timetable' => '18:30:00'
+            'title'     => 'из B в A',
+            'timetable' =>  '18:45:00'
 
         ]);
         DB::table('from_bto_a_s')->insert([
-            'title' => 'из B в A',
-            'event_id' => Str::random(3),
-            'timetable' => '18:45:00'
+            'title'     => 'из B в A',
+            'timetable' => '19:00:00'
 
         ]);
         DB::table('from_bto_a_s')->insert([
-            'title' => 'из B в A',
-            'event_id' => Str::random(3),
-            'timetable' =>   '19:00:00'
-        ]);
-        DB::table('from_bto_a_s')->insert([
-            'title' => 'из B в A',
-            'event_id' => Str::random(3),
+            'title'     => 'из B в A',
             'timetable' => '19:15:00'
+
         ]);
         DB::table('from_bto_a_s')->insert([
-            'title' => 'из B в A',
-            'event_id' => Str::random(3),
-            'timetable' => '21:00:00'
+            'title'     => 'из B в A',
+            'timetable' =>   '19:35:00'
+        ]);
+        DB::table('from_bto_a_s')->insert([
+            'title'     => 'из B в A',
+            'timetable' => '21:50:00'
+        ]);
+        DB::table('from_bto_a_s')->insert([
+            'title'     => 'из B в A',
+            'timetable' => '21:55:00'
         ]);
 
     }
