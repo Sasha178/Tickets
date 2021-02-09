@@ -36,39 +36,13 @@
                                                 </select>
                                             </div>
                                         </div>
+
+
                                         <div class="col-md-12 m-2">
                                             <div class="d-flex justify-content-between">
-                                                <label for="time"><h5>Льготный билет:</h5></label>
-                                                <select name="time" id="time1" class="custom-select col-md-4">
-                                                    <option value="0">0</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="3">5</option>
-                                                    <option value="4">6</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12 m-2">
-                                            <div class="d-flex justify-content-between">
-                                                <label for="time"><h5>Десткий билет:</h5></label>
-                                                <select name="time" id="time2" class="custom-select col-md-4">
-                                                    <option value="0">0</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="3">5</option>
-                                                    <option value="4">6</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12 m-2">
-                                            <div class="d-flex justify-content-between">
-                                                <label for="time"><h5>Взрослый билет:</h5></label>
+                                                <label for="time"><h5>Купить билет:</h5></label>
                                                 <select name="time" id="time3" class="custom-select col-md-4">
-                                                    <option value="0">0</option>
+                                                    <option value="#">Выбрать количество</option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3</option>
@@ -76,17 +50,12 @@
                                                     <option value="3">5</option>
                                                     <option value="4">6</option>
                                                 </select>
-                                            </div>
-                                        </div><div class="col-md-12 m-2">
-                                            <div class="d-flex justify-content-between">
-                                                <label for="time"><h5>Групповой билет:</h5></label>
-                                                <input type="text" placeholder="от 10">
                                             </div>
                                         </div>
                                         <div class="col-md-12 m-2">
                                             <div class="d-flex justify-content-around">
                                                 <h5>Время в дороге: <span>11:12</span></h5>
-                                                <h5>Стоимость:<span>600 p</span></h5>
+                                                <h5>Стоимость:<span>700 p</span></h5>
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-end">

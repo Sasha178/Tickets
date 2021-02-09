@@ -48,15 +48,14 @@ class DirectionController extends Controller
     public function show($id)
     {
        if ($id == 1) {
-           return json_encode(FromAtoB::all()->pluck('timetable'));
+           return json_encode(FromAtoB::all()->pluck('timetable', 'price'));
        }
         if ($id == 2) {
             return json_encode(FromBtoA::all()->pluck('timetable'));
         }
         if ($id == 3) {
 
-            $ArrayList = array(FromAtoB::all()->pluck('timetable'),
-                FromBtoA::all()->pluck('timetable'));
+            $ArrayList = FromAtoB::all()->pluck('timetable');
             return json_encode($ArrayList);
         }
     }
