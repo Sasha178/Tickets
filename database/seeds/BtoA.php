@@ -13,36 +13,50 @@ class BtoA extends Seeder
     public function run()
     {
         DB::table('from_bto_a_s')->insert([
-            'title'     => 'из B в A',
-            'timetable' =>  '18:30:00'
+            'title'      => 'из B в A',
+            'price'      => 1000,
+            'travelTime' => 40,
+            'timetable'  =>  '18:30:00'
 
         ]);
         DB::table('from_bto_a_s')->insert([
-            'title'     => 'из B в A',
-            'timetable' =>  '18:45:00'
+            'title'      => 'из B в A',
+            'price'      => 1000,
+            'travelTime' => 40,
+            'timetable'  =>  '18:45:00'
 
         ]);
         DB::table('from_bto_a_s')->insert([
-            'title'     => 'из B в A',
-            'timetable' => '19:00:00'
+            'title'      => 'из B в A',
+            'price'      => 1000,
+            'travelTime' => 40,
+            'timetable'  => '19:00:00'
 
         ]);
         DB::table('from_bto_a_s')->insert([
-            'title'     => 'из B в A',
-            'timetable' => '19:15:00'
+            'title'      => 'из B в A',
+            'price'      => 1000,
+            'travelTime' => 40,
+            'timetable'  => '19:15:00'
 
         ]);
         DB::table('from_bto_a_s')->insert([
-            'title'     => 'из B в A',
-            'timetable' =>   '19:35:00'
+            'title'      => 'из B в A',
+            'price'      => 1000,
+            'travelTime' => 40,
+            'timetable'  =>   '19:35:00'
         ]);
         DB::table('from_bto_a_s')->insert([
-            'title'     => 'из B в A',
-            'timetable' => '21:50:00'
+            'title'      => 'из B в A',
+            'price'      => 1000,
+            'travelTime' => 40,
+            'timetable'  => '21:50:00'
         ]);
         DB::table('from_bto_a_s')->insert([
-            'title'     => 'из B в A',
-            'timetable' => '21:55:00'
+            'title'      => 'из B в A',
+            'price'      => 1000,
+            'travelTime' => 40,
+            'timetable'  => '21:55:00'
         ]);
 
     }

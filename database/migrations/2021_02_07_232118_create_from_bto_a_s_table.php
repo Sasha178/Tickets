@@ -16,6 +16,8 @@ class CreateFromBtoASTable extends Migration
         Schema::create('from_bto_a_s', function (Blueprint $table) {
             $table->increments('id');
             $table->text('title');
+            $table->text('price');
+            $table->text('travelTime');
             $table->time('timetable');
             $table->timestamps();
         });
