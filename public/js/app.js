@@ -49901,55 +49901,184 @@ document.addEventListener('change', change, true);
 
 function change(event) {
   if (event.target.id === 'route') {
+    event.preventDefault();
     var directionA = 0;
+    document.getElementById('time').innerHTML = '';
+    document.getElementById('price').innerHTML = '';
+    document.getElementById('travelTime').innerHTML = '';
 
     if (event.target.value === 'из A в B') {
-      document.getElementById('time').innerHTML = '';
       directionA = 1;
-      console.log(directionA);
+      var request = new XMLHttpRequest();
+      var url = "direction/".concat(directionA);
+      request.open('GET', url, true);
+
+      request.onload = function () {
+        if (request.status === 200) {
+          var stringList = '';
+
+          if (directionA === 1) {
+            var listRequest = JSON.parse(request.response);
+            console.log(listRequest);
+
+            var _iterator = _createForOfIteratorHelper(listRequest.listItemTime),
+                _step;
+
+            try {
+              for (_iterator.s(); !(_step = _iterator.n()).done;) {
+                var item = _step.value;
+                stringList = stringList + "<option value=\"".concat(item, "\">").concat(item, "</option>");
+              }
+            } catch (err) {
+              _iterator.e(err);
+            } finally {
+              _iterator.f();
+            }
+
+            var _iterator2 = _createForOfIteratorHelper(listRequest.listItemPrice),
+                _step2;
+
+            try {
+              for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+                var _item = _step2.value;
+                listPrice = "<span id=\"price\">".concat(_item, " p</span>");
+              }
+            } catch (err) {
+              _iterator2.e(err);
+            } finally {
+              _iterator2.f();
+            }
+
+            var _iterator3 = _createForOfIteratorHelper(listRequest.travelTime),
+                _step3;
+
+            try {
+              for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+                var _item2 = _step3.value;
+                travelTime = "<span id=\"travelTime\">".concat(_item2, " \u043C\u0438\u043D\u0443\u0442</span>");
+              }
+            } catch (err) {
+              _iterator3.e(err);
+            } finally {
+              _iterator3.f();
+            }
+          }
+
+          document.getElementById('travelTime').insertAdjacentHTML('afterbegin', travelTime);
+          document.getElementById('price').insertAdjacentHTML('afterbegin', listPrice);
+          document.getElementById('time').insertAdjacentHTML('afterbegin', stringList);
+        }
+      };
+
+      request.send();
     }
 
     if (event.target.value === 'из B в A') {
-      document.getElementById('time').innerHTML = '';
       directionA = 2;
+
+      var _request = new XMLHttpRequest();
+
+      var _url = "direction/".concat(directionA);
+
+      _request.open('GET', _url, true);
+
+      _request.onload = function () {
+        if (_request.status === 200) {
+          var stringList = '';
+
+          if (directionA === 2) {
+            var RequestList = JSON.parse(_request.response);
+            console.log(RequestList);
+
+            var _iterator4 = _createForOfIteratorHelper(RequestList.listItemTime),
+                _step4;
+
+            try {
+              for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
+                var item = _step4.value;
+                stringList = stringList + "<option value=\"".concat(item, "\">").concat(item, "</option>");
+              }
+            } catch (err) {
+              _iterator4.e(err);
+            } finally {
+              _iterator4.f();
+            }
+
+            var _iterator5 = _createForOfIteratorHelper(RequestList.listItemPrice),
+                _step5;
+
+            try {
+              for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
+                var _item3 = _step5.value;
+                listPrice = "<span id=\"price\">".concat(_item3, " p</span>");
+              }
+            } catch (err) {
+              _iterator5.e(err);
+            } finally {
+              _iterator5.f();
+            }
+
+            var _iterator6 = _createForOfIteratorHelper(RequestList.travelTime),
+                _step6;
+
+            try {
+              for (_iterator6.s(); !(_step6 = _iterator6.n()).done;) {
+                var _item4 = _step6.value;
+                travelTime = "<span id=\"travelTime\">".concat(_item4, " \u043C\u0438\u043D\u0443\u0442</span>");
+              }
+            } catch (err) {
+              _iterator6.e(err);
+            } finally {
+              _iterator6.f();
+            }
+          }
+
+          document.getElementById('travelTime').insertAdjacentHTML('afterbegin', travelTime);
+          document.getElementById('price').insertAdjacentHTML('afterbegin', listPrice);
+          document.getElementById('time').insertAdjacentHTML('afterbegin', stringList);
+        }
+      };
+
+      _request.send();
     }
 
     if (event.target.value === 'из A в B и обратно в А') {
       directionA = 3;
-    }
 
-    var request = new XMLHttpRequest();
-    var url = "direction/".concat(directionA);
-    request.open('GET', url, true);
+      var _request2 = new XMLHttpRequest();
 
-    request.onload = function () {
-      if (request.status === 200) {
-        var stringList = '';
+      var _url2 = "direction/".concat(directionA);
 
-        if (directionA === 3) {
-          var listRequest = JSON.parse(request.response);
-          console.log(listRequest);
+      _request2.open('GET', _url2, true);
 
-          var _iterator = _createForOfIteratorHelper(listRequest),
-              _step;
+      _request2.onload = function () {
+        if (_request2.status === 200) {
+          var stringList = '';
 
-          try {
-            for (_iterator.s(); !(_step = _iterator.n()).done;) {
-              var items = _step.value;
-              stringList = stringList + "<option value=\"".concat(items, "\">").concat(items, "</option>");
+          if (directionA === 3) {
+            var listRequest = JSON.parse(_request2.response);
+
+            var _iterator7 = _createForOfIteratorHelper(listRequest),
+                _step7;
+
+            try {
+              for (_iterator7.s(); !(_step7 = _iterator7.n()).done;) {
+                var items = _step7.value;
+                stringList = stringList + "<option value=\"".concat(items, "\">").concat(items, "</option>");
+              }
+            } catch (err) {
+              _iterator7.e(err);
+            } finally {
+              _iterator7.f();
             }
-          } catch (err) {
-            _iterator.e(err);
-          } finally {
-            _iterator.f();
           }
+
+          document.getElementById('time').insertAdjacentHTML('afterbegin', stringList);
         }
+      };
 
-        document.getElementById('time').insertAdjacentHTML('afterbegin', stringList);
-      }
-    };
-
-    request.send();
+      _request2.send();
+    }
   }
 }
 
