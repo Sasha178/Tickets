@@ -7,6 +7,7 @@ function change(event) {
         document.getElementById('time').innerHTML = '';
         document.getElementById('price').innerHTML = '';
         document.getElementById('travelTime').innerHTML = '';
+        document.getElementById('listPrice').value = '';
 
         let btnAdd = document.getElementById('btnAdd');
         btnAdd.addEventListener('click', function (event) {
@@ -81,7 +82,9 @@ function change(event) {
                             stringList = stringList + `<option value="${item}">${item}</option>`;
                         }
                         for (let item of RequestList.listItemPrice) {
-                            listPrice = `<span id="price">${item} p</span>`;
+                            listPrice = `<span id="price">${item} </span>`;
+                            let list = document.getElementById('price');
+                            list.setAttribute('data_price', item);
                         }
                         for (let item of RequestList.travelTime) {
                             travelTime = `<span id="travelTime">${item} минут</span>`;

@@ -49906,6 +49906,7 @@ function change(event) {
     document.getElementById('time').innerHTML = '';
     document.getElementById('price').innerHTML = '';
     document.getElementById('travelTime').innerHTML = '';
+    document.getElementById('listPrice').value = '';
     var btnAdd = document.getElementById('btnAdd');
     btnAdd.addEventListener('click', function (event) {
       if (event.currentTarget === btnAdd) {
@@ -50038,7 +50039,9 @@ function change(event) {
             try {
               for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
                 var _item3 = _step5.value;
-                listPrice = "<span id=\"price\">".concat(_item3, " p</span>");
+                listPrice = "<span id=\"price\">".concat(_item3, " </span>");
+                var list = document.getElementById('price');
+                list.setAttribute('data_price', _item3);
               }
             } catch (err) {
               _iterator5.e(err);
