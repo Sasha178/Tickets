@@ -42,10 +42,10 @@
                                             <div class="d-flex justify-content-between">
                                                 <label for="time"><h5>Купить билет:</h5></label>
                                                 <h4 class="d-inline-flex justify-content-around">
-                                                    <span class="d-flex align-items-center">-</span>
-                                                    <input type="text" class="form-control col-md-6"
+                                                    <span id="btnAdd" class="d-flex align-items-center btnAdd">-</span>
+                                                    <input id="listPrice" type="text" class="form-control col-md-6"
                                                     placeholder="0">
-                                                    <span class="d-flex align-items-center">+</span>
+                                                    <span id="btnSubtract" class="d-flex align-items-center">+</span>
                                                 </h4>
                                             </div>
                                         </div>

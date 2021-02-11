@@ -49906,6 +49906,32 @@ function change(event) {
     document.getElementById('time').innerHTML = '';
     document.getElementById('price').innerHTML = '';
     document.getElementById('travelTime').innerHTML = '';
+    var btnAdd = document.getElementById('btnAdd');
+    btnAdd.addEventListener('click', function (event) {
+      if (event.currentTarget === btnAdd) {
+        var formInput = document.querySelector('input.form-control.col-md-6');
+        formInput.value--;
+
+        var _listPrice = document.getElementById('price');
+
+        var price = _listPrice.getAttribute('data_price');
+
+        this.offsetParent.parentElement.children[3].lastElementChild.lastElementChild.children[0].textContent = price * formInput.value;
+      }
+    });
+    var btnSubtract = document.getElementById('btnSubtract');
+    btnSubtract.addEventListener('click', function (event) {
+      if (event.currentTarget === btnSubtract) {
+        var formInput = document.querySelector('input.form-control.col-md-6');
+        formInput.value++;
+
+        var _listPrice2 = document.getElementById('price');
+
+        var price = _listPrice2.getAttribute('data_price');
+
+        this.offsetParent.parentElement.children[3].lastElementChild.lastElementChild.children[0].textContent = price * formInput.value;
+      }
+    });
 
     if (event.target.value === 'из A в B') {
       directionA = 1;
@@ -49941,7 +49967,9 @@ function change(event) {
             try {
               for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
                 var _item = _step2.value;
-                listPrice = "<span id=\"price\">".concat(_item, " p</span>");
+                var listPrice = "<span id=\"price\">".concat(_item, " </span>");
+                var list = document.getElementById('price');
+                list.setAttribute('data_price', _item);
               }
             } catch (err) {
               _iterator2.e(err);
@@ -49955,7 +49983,7 @@ function change(event) {
             try {
               for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
                 var _item2 = _step3.value;
-                travelTime = "<span id=\"travelTime\">".concat(_item2, " \u043C\u0438\u043D\u0443\u0442</span>");
+                var travelTime = "<span id=\"travelTime\">".concat(_item2, " \u043C\u0438\u043D\u0443\u0442</span>");
               }
             } catch (err) {
               _iterator3.e(err);
